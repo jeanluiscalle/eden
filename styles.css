@@ -295,12 +295,16 @@ main { position: relative; }
   background-image: radial-gradient(50% 70% at 0% 0%, rgba(255, 210, 176, .5), transparent 70%),
                     radial-gradient(50% 70% at 100% 100%, rgba(207, 192, 255, .4), transparent 70%);
 }
-.story-portrait { position: relative; width: clamp(150px, 26vw, 240px); aspect-ratio: 1; display: grid; place-items: center; }
-.story-initial {
-  display: grid; place-items: center; width: 100%; height: 100%; border-radius: 50%;
-  background: linear-gradient(140deg, var(--pink), var(--peach) 55%, var(--amber));
-  color: #fff; font-family: var(--serif); font-style: italic; font-size: clamp(5rem, 12vw, 8.5rem); line-height: 1;
-  box-shadow: inset 0 -20px 40px -10px rgba(197, 51, 106, .35), 0 40px 60px -30px rgba(197, 51, 106, .55);
+.story-portrait { position: relative; width: clamp(220px, 32vw, 340px); aspect-ratio: 1; display: grid; place-items: center; }
+.story-photo {
+  width: 100%; height: 100%; object-fit: cover; object-position: 55% 40%; border-radius: 50%;
+  border: 6px solid rgba(255,255,255,.85);
+  box-shadow: 0 40px 60px -30px rgba(197, 51, 106, .55), 0 0 0 1px rgba(224, 69, 123, .15);
+}
+.story-badge {
+  position: absolute; left: 50%; bottom: -6px; transform: translateX(-50%);
+  padding: .5rem 1rem; border-radius: 999px; white-space: nowrap;
+  font-size: .8rem; font-weight: 700; color: var(--accent-2);
 }
 .story-ring {
   position: absolute; inset: -14px; border-radius: 50%;
