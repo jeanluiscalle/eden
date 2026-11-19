@@ -160,10 +160,15 @@ em { font-family: var(--serif); font-style: italic; font-weight: 400; letter-spa
 }
 .nav.is-scrolled { padding-top: .5rem; }
 .brand { display: inline-flex; align-items: center; gap: .6rem; font-weight: 800; letter-spacing: .18em; }
-.brand-mark {
-  display: grid; place-items: center; width: 34px; height: 34px; border-radius: 11px;
-  background: linear-gradient(135deg, var(--accent), var(--amber));
-  color: #fff; font-family: var(--serif); font-style: italic; font-size: 1.35rem; letter-spacing: 0;
+.brand-logo {
+  width: 44px; height: 44px; border-radius: 50%; background: #fff;
+  box-shadow: 0 6px 14px -6px rgba(197, 51, 106, .45);
+  transition: transform .6s var(--ease-bounce);
+}
+.brand:hover .brand-logo { transform: rotate(-10deg) scale(1.06); }
+.footer-logo img {
+  width: 140px; height: 140px; border-radius: 50%; background: #fff;
+  box-shadow: 0 30px 50px -28px rgba(197, 51, 106, .6);
 }
 .brand-name { font-size: 1rem; }
 .nav-links {
@@ -494,10 +499,10 @@ main { position: relative; }
   .hero { grid-template-columns: 1.05fr .95fr; gap: 2rem; }
   .promise-row { grid-template-columns: repeat(4, 1fr); }
   .grid { grid-template-columns: repeat(3, 1fr); grid-auto-flow: dense; }
-  .card-featured { grid-column: span 2; flex-direction: row; }
-  .card-featured .card-media { flex: 0 0 48%; }
-  .card-featured .card-media img { height: 100%; }
-  .card-featured .card-body { padding: 2rem 1.8rem 1.2rem; justify-content: center; }
+  .card-featured { grid-column: span 2; grid-row: span 2; }
+  .card-featured .card-media { flex: 1 1 auto; position: relative; min-height: 0; }
+  .card-featured .card-media img { position: absolute; inset: 0; height: 100%; aspect-ratio: auto; object-position: 50% 55%; }
+  .card-featured .card-body { flex: 0 0 auto; padding: 1.6rem 1.4rem 1rem; }
   .card-featured h3 { font-size: clamp(1.7rem, 2.6vw, 2.3rem); }
   .card-featured p { font-size: 1.02rem; }
 }
